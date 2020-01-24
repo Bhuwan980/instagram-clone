@@ -1,0 +1,62 @@
+{% extends 'insta/base.html' %}
+
+
+{% block content %}
+<div class="conta">
+	<center>
+{% for post in posts %}
+   {% comment %} <p> {{ post.author }}</p>
+   <img src='{{ post.image.url }}' length = 100 px width = 200 px />
+   <p> {{ post.date }}</p>
+   <p>{{ post.caption }} {% endcomment %}
+   <div class="card" style="width: 40rem;">
+   <div class="card-title mr-auto">
+    <p class="card-text"><b>&nbsp;&nbsp;&nbsp; <a style="color:black;" href="">{{ post.author }}</a></b></p>
+  </div>
+  <a href="{% url 'detail' post.id %}">
+  <img src="{{ post.image.url }}" class="card-img-top" alt="photo">
+  </a>
+  <div class="card-body mr-auto">
+
+    <p class="card-text"><b><a style="color:black;" href="">{{ post.author }}</a></b> {{ post.caption }}</p>
+  </div>
+
+  {% comment %} like share and comment button {% endcomment %}
+  <div class=" mr-auto">
+   <ul style="list-style: none;" >
+   <li style="display:inline-block;" >
+   	 <a href=""><img src="https://img.icons8.com/pastel-glyph/64/000000/facebook-like.png" width=30px length=30px> </a>
+    </li>
+
+	<li style="display:inline-block;">
+	   <a href="">
+	<img src="https://img.icons8.com/carbon-copy/100/000000/speech-bubble-with-dots.png" width=30px length=30px>
+	</a>
+	</li>
+
+	<li style="display:inline-block;">
+	<a href=""><img src="https://img.icons8.com/material-rounded/24/000000/share-3.png"></a>
+	</li>
+        
+            <li style="display:inline-block; ">
+        <a href=""><img src="https://img.icons8.com/carbon-copy/100/000000/bookmark-ribbon.png" width=30px length=30px></a>
+        </li>
+	</ul>
+</div>
+
+<div class="ml-auto"> 
+<ul>
+</ul>
+</div>
+ {% comment %} //like share and comment button {% endcomment %}
+</div>
+<br>
+
+{% endfor %}
+
+
+</center>
+
+</div>
+
+{% endblock content %}

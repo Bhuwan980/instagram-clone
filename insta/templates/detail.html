@@ -1,0 +1,17 @@
+ {% extends 'insta/base.html' %}
+
+ {% block detail %}
+
+ <center>
+ <div class="card" style="width: 80rem;">
+   <a href="{% url 'detail' posts.id %}">
+  <img src="{{ posts.image.url }}" class="card-img-top" alt="photo">
+  </a>
+  <div class="card-body mr-auto">
+    <p class="card-text"></b> {{ posts.caption }}</p>
+  </div>
+  </center>
+
+
+ {% endblock %}
+ 
