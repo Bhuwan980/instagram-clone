@@ -24,6 +24,8 @@
       </li>  
      
     </ul>
+    <a href="{% url "create" %}">+add post</a>
+    &nbsp;&nbsp;&nbsp;&nbsp;
     <form class="form-inline my-2 my-lg-0">
       <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
       <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
@@ -38,6 +40,10 @@
 {% block detail %}
 
 {% endblock %}
+
+{% block create %}
+
+{% endblock  %}
 <br>
 
 <link type="stylesheet" href="https://icons8.com/icon/102321/chat-bubble"/>
